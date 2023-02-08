@@ -40,7 +40,7 @@ class TopSection extends StatelessWidget {
                 ],
               ),
               const SizedBox(height: 40),
-              Text("I'm Alex. I will turn your app\nidea into reality",
+              Text("I'm Alex. I will turn your app\nidea into star pixels!",
                   style: kHeadlineTextWhite),
               const SizedBox(height: 28),
               SizedBox(
