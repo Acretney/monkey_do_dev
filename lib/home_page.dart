@@ -83,10 +83,11 @@ class _MyWorkSectionState extends State<MyWorkSection> {
 
 enum BuckTheCriticsSlide {
   initial,
-  addReview,
-  calculatedScore,
-  viewFriend,
-  browseMovies
+  addReviews,
+  calculatedScores,
+  trustedFriends,
+  browseArchive,
+  bonusFeature,
 }
 
 class BackTheCriticsShowcasePage extends StatefulWidget {
@@ -138,11 +139,11 @@ class _BackTheCriticsShowcasePageState
               height: 620,
               decoration: const BoxDecoration(color: Colors.amber),
             ),
-            // * INITIAL SLIDE
+            // * SLIDE 1
             SizedBox(
               width: 280,
               child: Image.asset(
-                'images/my_work/buck_the_critics/MovieScreen.png',
+                'images/my_work/buck_the_critics/sl1_movie.png',
               )
                   .animate()
                   .slideY(
@@ -150,7 +151,8 @@ class _BackTheCriticsShowcasePageState
                     duration: 200.ms,
                     curve: Curves.easeIn,
                   )
-                  .animate(target: slide != BuckTheCriticsSlide.initial ? 1 : 0)
+                  .animate(
+                      target: slide != BuckTheCriticsSlide.bonusFeature ? 1 : 0)
                   .slideX(end: -2),
             ),
             Positioned(
@@ -159,7 +161,7 @@ class _BackTheCriticsShowcasePageState
               child: SizedBox(
                 width: 280,
                 child: Image.asset(
-                  'images/my_work/buck_the_critics/QuickReviewScreen.png',
+                  'images/my_work/buck_the_critics/sl1-2_quick_review.png',
                 )
                     .animate()
                     .slideY(
@@ -169,7 +171,8 @@ class _BackTheCriticsShowcasePageState
                       curve: Curves.easeIn,
                     )
                     .animate(
-                        target: slide != BuckTheCriticsSlide.initial ? 1 : 0)
+                        target:
+                            slide != BuckTheCriticsSlide.bonusFeature ? 1 : 0)
                     .slideY(end: -2),
               ),
             ),
@@ -179,7 +182,7 @@ class _BackTheCriticsShowcasePageState
               child: SizedBox(
                 width: 280,
                 child: Image.asset(
-                  'images/my_work/buck_the_critics/EagleViewScreen.png',
+                  'images/my_work/buck_the_critics/sl1-6_eagle_view.png',
                 )
                     .animate()
                     .slideY(
@@ -189,7 +192,8 @@ class _BackTheCriticsShowcasePageState
                       curve: Curves.easeIn,
                     )
                     .animate(
-                        target: slide != BuckTheCriticsSlide.initial ? 1 : 0)
+                        target:
+                            slide != BuckTheCriticsSlide.bonusFeature ? 1 : 0)
                     .slideY(end: 2),
               ),
             ),
@@ -199,7 +203,7 @@ class _BackTheCriticsShowcasePageState
               child: SizedBox(
                 width: 280,
                 child: Image.asset(
-                  'images/my_work/buck_the_critics/ManageFriendsScreen.png',
+                  'images/my_work/buck_the_critics/sl1_manage_friends.png',
                 )
                     .animate()
                     .slideY(
@@ -209,22 +213,23 @@ class _BackTheCriticsShowcasePageState
                       curve: Curves.easeIn,
                     )
                     .animate(
-                        target: slide != BuckTheCriticsSlide.initial ? 1 : 0)
+                        target:
+                            slide != BuckTheCriticsSlide.bonusFeature ? 1 : 0)
                     .slideX(end: 2),
               ),
             ),
-            // * ADD REVIEW SLIDE
+            // * SLIDE 2
             Positioned(
               left: 60,
               bottom: -120,
               child: SizedBox(
                   width: 280,
                   child: Image.asset(
-                    'images/my_work/buck_the_critics/SearchScreen.png',
+                    'images/my_work/buck_the_critics/sl2_search.png',
                   )
                       .animate(
                           target:
-                              slide == BuckTheCriticsSlide.addReview ? 1 : 0)
+                              slide == BuckTheCriticsSlide.addReviews ? 1 : 0)
                       .slideY(
                         delay: 200.ms,
                         begin: 1,
@@ -241,26 +246,26 @@ class _BackTheCriticsShowcasePageState
                 textAlign: TextAlign.center,
               )
                   .animate(
-                      target: slide == BuckTheCriticsSlide.addReview ? 1 : 0)
+                      target: slide == BuckTheCriticsSlide.addReviews ? 1 : 0)
                   .fadeIn(delay: 400.ms),
             ),
             Positioned(
               left: 340,
               top: 0,
               child: SizedBox(
-                  width: 280,
-                  child: Image.asset(
-                    'images/my_work/buck_the_critics/LongReviewScreen.png',
-                  )
-                      .animate(
-                          target:
-                              slide == BuckTheCriticsSlide.addReview ? 1 : 0)
-                      .slideY(
-                        delay: 200.ms,
-                        begin: -1,
-                        duration: 200.ms,
-                        curve: Curves.easeIn,
-                      )),
+                width: 280,
+                child: Image.asset(
+                  'images/my_work/buck_the_critics/sl2_long_review.png',
+                )
+                    .animate(
+                        target: slide == BuckTheCriticsSlide.addReviews ? 1 : 0)
+                    .slideY(
+                      delay: 200.ms,
+                      begin: -1,
+                      duration: 200.ms,
+                      curve: Curves.easeIn,
+                    ),
+              ),
             ),
             Positioned(
               left: 420,
@@ -271,7 +276,7 @@ class _BackTheCriticsShowcasePageState
                 textAlign: TextAlign.center,
               )
                   .animate(
-                      target: slide == BuckTheCriticsSlide.addReview ? 1 : 0)
+                      target: slide == BuckTheCriticsSlide.addReviews ? 1 : 0)
                   .fadeIn(delay: 400.ms),
             ),
             Positioned(
@@ -283,7 +288,7 @@ class _BackTheCriticsShowcasePageState
                 textAlign: TextAlign.center,
               )
                   .animate(
-                      target: slide == BuckTheCriticsSlide.addReview ? 1 : 0)
+                      target: slide == BuckTheCriticsSlide.addReviews ? 1 : 0)
                   .fadeIn(delay: 600.ms),
             ),
             Positioned(
@@ -297,7 +302,7 @@ class _BackTheCriticsShowcasePageState
                 ),
               )
                   .animate(
-                      target: slide == BuckTheCriticsSlide.addReview ? 1 : 0)
+                      target: slide == BuckTheCriticsSlide.addReviews ? 1 : 0)
                   .fadeIn(delay: 700.ms),
             ),
 
@@ -310,7 +315,7 @@ class _BackTheCriticsShowcasePageState
                 textAlign: TextAlign.center,
               )
                   .animate(
-                      target: slide == BuckTheCriticsSlide.addReview ? 1 : 0)
+                      target: slide == BuckTheCriticsSlide.addReviews ? 1 : 0)
                   .fadeIn(delay: 800.ms),
             ),
             Positioned(
@@ -319,16 +324,390 @@ class _BackTheCriticsShowcasePageState
               child: SizedBox(
                 width: 280,
                 child: Image.asset(
-                  'images/my_work/buck_the_critics/QuickReviewScreen.png',
+                  'images/my_work/buck_the_critics/sl1-2_quick_review.png',
                 )
                     .animate(
-                        target: slide == BuckTheCriticsSlide.addReview ? 1 : 0)
+                        target: slide == BuckTheCriticsSlide.addReviews ? 1 : 0)
                     .slideX(
                       begin: 1.2,
                       delay: 200.ms,
                       duration: 200.ms,
                       curve: Curves.easeIn,
                     ),
+              ),
+            ),
+            // * SLIDE 3
+            Positioned(
+              left: 40,
+              top: 160,
+              child: Text(
+                'Meanwhile...',
+                style: kBodyText,
+              )
+                  .animate(
+                      target:
+                          slide == BuckTheCriticsSlide.calculatedScores ? 1 : 0)
+                  .fadeIn(delay: 400.ms),
+            ),
+            Positioned(
+              left: 40,
+              top: 220,
+              child: SizedBox(
+                width: 220,
+                child: Text(
+                  'Your friends reviews will be served to your library!',
+                  style: kBodyText,
+                )
+                    .animate(
+                        target: slide == BuckTheCriticsSlide.calculatedScores
+                            ? 1
+                            : 0)
+                    .fadeIn(delay: 400.ms),
+              ),
+            ),
+            Positioned(
+              left: 40,
+              top: 320,
+              child: SizedBox(
+                width: 260,
+                child: Text(
+                  'The supra-funky buck-o-matic analyser 3000 will do its work and provide you a calculated rating.',
+                  style: kBodyText,
+                ),
+              )
+                  .animate(
+                      target:
+                          slide == BuckTheCriticsSlide.calculatedScores ? 1 : 0)
+                  .fadeIn(delay: 400.ms),
+            ),
+            Positioned(
+              top: 40,
+              left: 300,
+              child: SizedBox(
+                width: 280,
+                child: Image.asset(
+                  'images/my_work/buck_the_critics/sl3_good_rating.png',
+                )
+                    .animate(
+                        target: slide == BuckTheCriticsSlide.calculatedScores
+                            ? 1
+                            : 0)
+                    .slideX(
+                      begin: -3,
+                      delay: 100.ms,
+                      duration: 200.ms,
+                      curve: Curves.easeIn,
+                    ),
+              ),
+            ),
+            const Positioned(
+              left: 600,
+              top: 40,
+              child: HeaderWithText(
+                  header: 'Good',
+                  body:
+                      'Buck-O-Matic noticed you and your friend have rated movies of the same genres in the past',
+                  bodyWidth: 320),
+            )
+                .animate(
+                    target:
+                        slide == BuckTheCriticsSlide.calculatedScores ? 1 : 0)
+                .fadeIn(delay: 500.ms),
+            Positioned(
+              top: 190,
+              left: 380,
+              child: SizedBox(
+                width: 320,
+                child: Image.asset(
+                  'images/my_work/buck_the_critics/sl3_better_rating.png',
+                )
+                    .animate(
+                        target: slide == BuckTheCriticsSlide.calculatedScores
+                            ? 1
+                            : 0)
+                    .slideX(
+                      begin: -3,
+                      delay: 200.ms,
+                      duration: 200.ms,
+                      curve: Curves.easeIn,
+                    ),
+              ),
+            ),
+            const Positioned(
+              left: 720,
+              top: 192,
+              child: HeaderWithText(
+                  header: 'Better!',
+                  body:
+                      'Buck-O-Matic noticed you’ve both rated movies with the same director in the past. ',
+                  bodyWidth: 320),
+            )
+                .animate(
+                    target:
+                        slide == BuckTheCriticsSlide.calculatedScores ? 1 : 0)
+                .fadeIn(delay: 700.ms),
+            Positioned(
+              top: 360,
+              left: 340,
+              child: SizedBox(
+                width: 420,
+                child: Image.asset(
+                  'images/my_work/buck_the_critics/sl3_best_rating.png',
+                )
+                    .animate(
+                        target: slide == BuckTheCriticsSlide.calculatedScores
+                            ? 1
+                            : 0)
+                    .slideX(
+                      begin: -3,
+                      delay: 300.ms,
+                      duration: 200.ms,
+                      curve: Curves.easeIn,
+                    ),
+              ),
+            ),
+            const Positioned(
+              left: 780,
+              top: 362,
+              child: HeaderWithText(
+                  header: 'Best!!',
+                  body:
+                      'Congratulations, you have more than one friend!\n\nNow we can do a super accurate calculation with maths stuff like averages and weightings',
+                  bodyWidth: 280),
+            )
+                .animate(
+                    target:
+                        slide == BuckTheCriticsSlide.calculatedScores ? 1 : 0)
+                .fadeIn(delay: 900.ms),
+            // * SLIDE 4
+            Positioned(
+              left: 40,
+              top: 120,
+              child: SizedBox(
+                width: 200,
+                child: Text(
+                  'Buck-o-matic calculates a ‘trust’ score for each of your friends based on a super-advanced algorithm',
+                  style: kBodyText,
+                  textAlign: TextAlign.center,
+                )
+                    .animate(
+                        target:
+                            slide == BuckTheCriticsSlide.trustedFriends ? 1 : 0)
+                    .fadeIn(delay: 200.ms),
+              ),
+            ),
+            Positioned(
+              left: 40,
+              top: 300,
+              child: SizedBox(
+                width: 200,
+                child: Text(
+                  'A RECORD OF SIMILAR RATINGS',
+                  style: kBodyText.copyWith(
+                      fontWeight: FontWeight.bold, fontSize: 20, height: 1),
+                  textAlign: TextAlign.center,
+                )
+                    .animate(
+                        target:
+                            slide == BuckTheCriticsSlide.trustedFriends ? 1 : 0)
+                    .fadeIn(delay: 600.ms),
+              ),
+            ),
+            Positioned(
+              left: 40,
+              top: 354,
+              child: SizedBox(
+                width: 200,
+                child: Text(
+                  'MEANS',
+                  style: kBodyText.copyWith(fontWeight: FontWeight.bold),
+                  textAlign: TextAlign.center,
+                )
+                    .animate(
+                        target:
+                            slide == BuckTheCriticsSlide.trustedFriends ? 1 : 0)
+                    .fadeIn(delay: 1100.ms),
+              ),
+            ),
+            Positioned(
+              left: 40,
+              top: 412,
+              child: SizedBox(
+                width: 200,
+                child: Text(
+                  'HIGHER TRUST',
+                  style: kBodyText.copyWith(
+                      fontWeight: FontWeight.w800, fontSize: 32, height: 1),
+                  textAlign: TextAlign.center,
+                )
+                    .animate(
+                        target:
+                            slide == BuckTheCriticsSlide.trustedFriends ? 1 : 0)
+                    .fadeIn(delay: 1600.ms)
+                    .scaleXY(begin: 0, end: 1.2)
+                    .shake()
+                    .then()
+                    .scaleXY(begin: 1.2, end: 1),
+              ),
+            ),
+            Positioned(
+              top: 40,
+              left: 300,
+              child: SizedBox(
+                width: 240,
+                child: Image.asset(
+                  'images/my_work/buck_the_critics/sl4_friend.png',
+                )
+                    .animate(
+                        target:
+                            slide == BuckTheCriticsSlide.trustedFriends ? 1 : 0)
+                    .slideY(
+                      delay: 100.ms,
+                      begin: -1.5,
+                      curve: Curves.easeIn,
+                    ),
+              ),
+            ),
+            slide == BuckTheCriticsSlide.trustedFriends
+                ? Positioned(
+                    left: 640,
+                    top: 108,
+                    child: SizedBox(
+                      width: 280,
+                      child: Text(
+                        'Friends with higher trust add more weighting to calculated scores!',
+                        style: kBodyText,
+                        textAlign: TextAlign.center,
+                      )
+                          .animate(
+                              target:
+                                  slide == BuckTheCriticsSlide.trustedFriends
+                                      ? 1
+                                      : 0)
+                          .fadeIn(delay: 2200.ms)
+                          .fadeOut(delay: 4800.ms),
+                    ),
+                  )
+                : const SizedBox.shrink(),
+            slide == BuckTheCriticsSlide.trustedFriends
+                ? Positioned(
+                    top: 200,
+                    left: 640,
+                    child: SizedBox(
+                      width: 280,
+                      child: Image.asset(
+                        'images/my_work/buck_the_critics/sl4_calculated_result.png',
+                      )
+                          .animate(
+                              target:
+                                  slide == BuckTheCriticsSlide.trustedFriends
+                                      ? 1
+                                      : 0)
+                          .scaleXY(
+                            delay: 2100.ms,
+                            begin: 0,
+                            end: 1,
+                          )
+                          .fadeOut(delay: 4800.ms),
+                    ),
+                  )
+                : const SizedBox.shrink(),
+            slide == BuckTheCriticsSlide.trustedFriends
+                ? Positioned(
+                    left: 512,
+                    top: 368,
+                    child: SizedBox(
+                      width: 280,
+                      child: Text(
+                        'Low\nWeighting',
+                        style: kBodyText,
+                        textAlign: TextAlign.center,
+                      )
+                          .animate(
+                              target:
+                                  slide == BuckTheCriticsSlide.trustedFriends
+                                      ? 1
+                                      : 0)
+                          .fadeIn(delay: 2300.ms)
+                          .fadeOut(delay: 4800.ms),
+                    ),
+                  )
+                : const SizedBox.shrink(),
+            slide == BuckTheCriticsSlide.trustedFriends
+                ? Positioned(
+                    left: 620,
+                    top: 368,
+                    child: SizedBox(
+                      width: 280,
+                      child: Text(
+                        'Medium\nWeighting',
+                        style: kBodyText.copyWith(
+                            fontSize: 18, fontWeight: FontWeight.w700),
+                        textAlign: TextAlign.center,
+                      )
+                          .animate(
+                              target:
+                                  slide == BuckTheCriticsSlide.trustedFriends
+                                      ? 1
+                                      : 0)
+                          .fadeIn(delay: 2400.ms)
+                          .fadeOut(delay: 4800.ms),
+                    ),
+                  )
+                : const SizedBox.shrink(),
+            slide == BuckTheCriticsSlide.trustedFriends
+                ? Positioned(
+                    left: 740,
+                    top: 368,
+                    child: SizedBox(
+                      width: 280,
+                      child: Text(
+                        'Many\nWeighting!!',
+                        style: kBodyText.copyWith(
+                            fontSize: 20, fontWeight: FontWeight.w900),
+                        textAlign: TextAlign.center,
+                      )
+                          .animate(
+                              target:
+                                  slide == BuckTheCriticsSlide.trustedFriends
+                                      ? 1
+                                      : 0)
+                          .fadeIn(delay: 2400.ms)
+                          .fadeOut(delay: 4800.ms),
+                    ),
+                  )
+                : const SizedBox.shrink(),
+            Positioned(
+              top: 40,
+              left: 580,
+              child: SizedBox(
+                width: 240,
+                child: Image.asset(
+                  'images/my_work/buck_the_critics/sl4_friends_list.png',
+                )
+                    .animate(
+                        target:
+                            slide == BuckTheCriticsSlide.trustedFriends ? 1 : 0)
+                    .slideY(
+                      delay: 5000.ms,
+                      begin: 1.5,
+                      curve: Curves.easeIn,
+                    ),
+              ),
+            ),
+            Positioned(
+              left: 840,
+              top: 260,
+              child: SizedBox(
+                width: 200,
+                child: Text(
+                  'Tired of judging movies? Judge your friends!',
+                  style: kBodyText,
+                )
+                    .animate(
+                        target:
+                            slide == BuckTheCriticsSlide.trustedFriends ? 1 : 0)
+                    .fadeIn(delay: 5400.ms),
               ),
             ),
           ],
@@ -340,6 +719,39 @@ class _BackTheCriticsShowcasePageState
           },
           child: const Text('PROCEED'),
         )
+      ],
+    );
+  }
+}
+
+class HeaderWithText extends StatelessWidget {
+  const HeaderWithText(
+      {super.key,
+      required this.header,
+      required this.body,
+      required this.bodyWidth});
+
+  final String header;
+  final String body;
+  final double bodyWidth;
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          header,
+          style: kBodyText.copyWith(fontWeight: FontWeight.bold),
+        ),
+        const SizedBox(height: 4),
+        SizedBox(
+          width: bodyWidth,
+          child: Text(
+            body,
+            style: kBodyText,
+          ),
+        ),
       ],
     );
   }
