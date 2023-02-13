@@ -10,7 +10,7 @@ class TopSection extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        Image.asset('images/TopSectionGraphic.png'),
+        Image.asset('images/TopBlockGradient.png'),
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 40),
           child: Column(
@@ -22,20 +22,20 @@ class TopSection extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Text(
-                      'PROJECTS',
+                      'PrOjeCTS',
                       style: kAppBarHeaderText,
                     ),
                   ),
                   Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Text(
-                      'MY STORY',
+                      'mY STORy',
                       style: kAppBarHeaderText,
                     ),
                   ),
                   Padding(
                     padding: const EdgeInsets.all(8.0),
-                    child: Text('CONTACT', style: kAppBarHeaderText),
+                    child: Text('CONTaCT', style: kAppBarHeaderText),
                   ),
                 ],
               ),

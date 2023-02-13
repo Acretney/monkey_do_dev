@@ -21,10 +21,13 @@ final TextStyle kHeadlineText = GoogleFonts.poppins(
 );
 
 final TextStyle kBodyTextWhite = GoogleFonts.poppins(
-  color: Colors.white,
-  fontSize: 16,
-);
+    color: Colors.white, fontSize: 16, fontWeight: FontWeight.w500);
 
-final TextStyle kBodyText = GoogleFonts.poppins(
-  fontSize: 16,
-);
+final TextStyle kBodyText =
+    GoogleFonts.poppins(fontSize: 16, fontWeight: FontWeight.w500);
+
+final TextStyle kShowcaseBodyText = GoogleFonts.poppins(
+    fontSize: 20, fontWeight: FontWeight.w500, color: Colors.grey.shade900);
+
+final TextStyle kShowcaseDisplayText =
+    GoogleFonts.ubuntu(fontWeight: FontWeight.w900, fontSize: 20);
