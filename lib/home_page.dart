@@ -135,7 +135,8 @@ class _HomePageState extends State<HomePage> {
                                   TextSpan(
                                       text: 'TITAN OF OLYMPUS ',
                                       style: kBodyText.copyWith(
-                                          fontWeight: FontWeight.bold)),
+                                        fontWeight: FontWeight.bold,
+                                      )),
                                   const TextSpan(
                                       text:
                                           'towards achieving my ultimate goal!')
@@ -150,14 +151,28 @@ class _HomePageState extends State<HomePage> {
                             Text(
                                 'Until that day comes, I’m open to contract works so do drop me a message if you have a project to discuss, and feel free to check out my apps which I think are pretty cool even if I do say so myself.',
                                 style: kBodyText.copyWith(height: 1.8)),
-                            const SizedBox(height: 20),
+                            const SizedBox(height: 140),
                           ],
                         ),
                       ),
                     ),
+                    Positioned(
+                      bottom: 0,
+                      child: Container(
+                        height: 200,
+                        width: 1200,
+                        decoration: BoxDecoration(
+                            gradient: LinearGradient(
+                                begin: Alignment.bottomCenter,
+                                end: Alignment.topCenter,
+                                colors: [
+                              Colors.white,
+                              Colors.white.withOpacity(0),
+                            ])),
+                      ),
+                    )
                   ],
                 ),
-                const SizedBox(height: 120),
                 const BottomSection(),
               ],
             ),

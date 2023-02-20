@@ -10,7 +10,7 @@ class TopSection extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        Image.asset('images/TopBlockGradient.png'),
+        Image.asset('images/TopGraphicBlockGradient.png'),
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 40),
           child: Column(
